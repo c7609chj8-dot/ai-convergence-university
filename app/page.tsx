@@ -1,5 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Arrow, LineIcon } from "@/components/icons";
+import classroomHero from "@/public/images/university/classroom-learning-hero-v2.png";
+import websiteImage from "@/public/images/university/website-final-tile-v3.png";
+import { Arrow } from "@/components/icons";
 import { Eyebrow, ProgramCard, RecruitmentBanner } from "@/components/ui";
 import { ProjectPreview } from "@/components/project-preview";
 import { faqs, projects } from "@/content/site";
@@ -7,11 +10,21 @@ import { faqs, projects } from "@/content/site";
 export default function HomePage() {
   return (
     <>
-      <section className="home-hero">
-        <div className="container hero-grid">
-          <div className="hero-copy">
+      <section className="image-hero" aria-labelledby="hero-title">
+        <figure className="image-hero-art">
+          <Image
+            src={classroomHero}
+            alt="성인학습자들이 노트북 실습에 참여하는 강의실을 표현한 AI 생성 이미지"
+            fill
+            preload
+            placeholder="blur"
+            sizes="100vw"
+          />
+        </figure>
+        <div className="container image-hero-inner">
+          <div className="image-hero-copy">
             <Eyebrow>새로운 배움, 새로운 가능성</Eyebrow>
-            <h1>
+            <h1 id="hero-title">
               AI를 배우고,
               <br />
               <span>나의 가능성</span>을<br />
@@ -23,7 +36,7 @@ export default function HomePage() {
               일상에 필요한 작은 도구부터 나만의 프로그램까지,
               <br className="desktop-only" /> 직접 만들며 배우는 24주의 여정.
             </p>
-            <div className="hero-buttons">
+            <div className="image-hero-actions">
               <Link href="/programs" className="button">
                 교육과정 살펴보기 <Arrow />
               </Link>
@@ -31,69 +44,13 @@ export default function HomePage() {
                 24주 여정 보기 <Arrow diagonal />
               </Link>
             </div>
-            <div className="hero-caption">
+            <div className="image-hero-support">
               <span className="small-dot" />
               성인·비전공자를 위한 실습 중심 교육
             </div>
           </div>
-          <div className="hero-art" aria-hidden="true">
-            <div className="orbital orbital-one" />
-            <div className="orbital orbital-two" />
-            <span className="art-coordinate top">LEARN. BUILD. GROW.</span>
-            <span className="art-coordinate bottom">
-              YOUR IDEAS, MADE REAL.
-            </span>
-            <div className="floating-tag tag-top">
-              <LineIcon name="spark" size={17} /> 아이디어가 시작되는 순간
-            </div>
-            <div className="hero-window">
-              <div className="window-bar">
-                <div>
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <span>my-first-project</span>
-                <LineIcon name="code" size={16} />
-              </div>
-              <div className="window-content">
-                <span className="editor-eyebrow">HELLO, NEW POSSIBILITY</span>
-                <div className="window-heading">
-                  나의 첫 번째
-                  <br />
-                  <span>가능성</span>을 만드는 중.
-                </div>
-                <div className="editor-code">
-                  <span>const</span> myFuture = {"{"}
-                  <br />
-                  &nbsp;&nbsp;curiosity: <em>&quot;새롭게 배우기&quot;</em>,
-                  <br />
-                  &nbsp;&nbsp;idea: <em>&quot;직접 만들어 보기&quot;</em>,<br />
-                  &nbsp;&nbsp;possibility: <b>Infinity</b>
-                  <br />
-                  {"};"}
-                </div>
-                <div className="window-bottom">
-                  <span>
-                    <i /> 작은 시작, 더 넓은 일상
-                  </span>
-                  <span className="play-icon">→</span>
-                </div>
-              </div>
-            </div>
-            <div className="floating-tag tag-bottom">
-              <span className="tag-check">
-                <LineIcon name="check" size={18} />
-              </span>
-              <div>
-                <strong>나도 만들 수 있구나.</strong>
-                <small>배움을, 실제 결과물로.</small>
-              </div>
-            </div>
-            <span className="art-cross cross-one">+</span>
-            <span className="art-cross cross-two">+</span>
-          </div>
         </div>
+        <span className="hero-image-label">AI 생성 교육 콘셉트 이미지</span>
       </section>
       <section className="facts-strip" aria-label="교육과정 요약">
         <div className="container facts-grid">
@@ -259,6 +216,18 @@ export default function HomePage() {
             <Link href="/about" className="text-link">
               우리의 교육 방식 <Arrow />
             </Link>
+            <figure className="approach-visual">
+              <Image
+                src={websiteImage}
+                alt="홈페이지의 마지막 콘텐츠 타일을 배치하며 직접 완성하는 경험을 표현한 일러스트"
+                fill
+                placeholder="blur"
+                sizes="(max-width: 900px) 100vw, 550px"
+              />
+            </figure>
+            <p className="visual-caption">
+              AI 생성 이미지 · 직접 만들며 배우는 경험
+            </p>
           </div>
           <div className="approach-list">
             {[

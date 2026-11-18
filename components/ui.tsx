@@ -1,3 +1,6 @@
+import Image from "next/image";
+import basicImage from "@/public/images/university/everyday-digital-tools-v3.png";
+import advancedImage from "@/public/images/university/personal-data-insights-v3.png";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Arrow, BrandMark } from "./icons";
@@ -52,6 +55,16 @@ export function ProgramCard({ track }: { track: Track }) {
         <span className="round-arrow">
           <Arrow diagonal />
         </span>
+      </div>
+      <div className="program-card-visual" aria-hidden="true">
+        <Image
+          src={track === "basic" ? basicImage : advancedImage}
+          alt=""
+          fill
+          placeholder="blur"
+          sizes="(max-width: 600px) 100vw, 550px"
+        />
+        <span>AI 생성 학습 예시</span>
       </div>
       <p>
         {track === "basic"

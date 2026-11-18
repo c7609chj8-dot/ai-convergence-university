@@ -1,3 +1,6 @@
+import Image from "next/image";
+import assistantImage from "@/public/images/university/05-human-reviewed-automation-v2.png";
+
 export function ProjectPreview({
   kind,
   large = false,
@@ -5,6 +8,26 @@ export function ProjectPreview({
   kind: "qr" | "pdf" | "assistant";
   large?: boolean;
 }) {
+  if (kind === "assistant") {
+    return (
+      <div
+        className={`project-preview assistant image-preview${large ? " large" : ""}`}
+        aria-hidden="true"
+      >
+        <Image
+          src={assistantImage}
+          alt=""
+          fill
+          placeholder="blur"
+          sizes={
+            large
+              ? "(max-width: 900px) 100vw, 640px"
+              : "(max-width: 600px) 100vw, 420px"
+          }
+        />
+      </div>
+    );
+  }
   return (
     <div
       className={`project-preview ${kind}${large ? " large" : ""}`}
@@ -52,34 +75,6 @@ export function ProjectPreview({
               <i />
             </div>
             <small>나의 첫 문서.pdf</small>
-          </div>
-        </div>
-      ) : null}
-      {kind === "assistant" ? (
-        <div className="assistant-app">
-          <div className="assistant-title">
-            <span className="assistant-dot" />
-            나의 작은 업무비서 <span>DEMO</span>
-          </div>
-          <div className="assistant-row">
-            <span>01</span>
-            <div>
-              <small>일정 선택</small>
-              <strong>주말 모임 안내 준비</strong>
-            </div>
-            <span className="mini-check">✓</span>
-          </div>
-          <div className="assistant-row">
-            <span>02</span>
-            <div>
-              <small>날씨 확인</small>
-              <strong>도시와 방문일로 조회</strong>
-            </div>
-            <span className="mini-check">✓</span>
-          </div>
-          <div className="assistant-draft">
-            <span />
-            안내문 초안을 검토해 주세요.
           </div>
         </div>
       ) : null}

@@ -1,0 +1,12 @@
+# 강의실 참고 메인 이미지
+
+- 도구: 내장 image_gen
+- 용도: 홈페이지 메인 히어로
+- 파일: public/images/university/classroom-learning-hero-v2.png
+- 실제 촬영 수업 사진이 아닌 AI 생성 콘셉트 이미지.
+
+Use case: photorealistic-natural, website hero asset. Use BOTH supplied photographs only as references for a Korean adult continuing-education classroom, learners' activity and room layout. Create ONE NEW horizontal 16:9 editorial photograph-like image with new generic people, not a collage and not a reproduction of identifiable participants.
+Show around twenty Korean adults around ages 40–60, mostly women with a few men, concentrating on laptop-based AI/web-learning at rows of light desks. A modest real classroom like the references, central aisle and a male instructor at the front beside a projector and whiteboard. View from rear left at a level natural camera angle with correct perspective, primarily backs and subtle side profiles. Natural quiet concentration, small gestures of peer help, ordinary knitwear and casual clothes. No staged cheering, everyone looking at camera, or lavish futuristic campus.
+This is intended for a website main hero with copy on the LEFT. Compose the learning activity and main visual detail on the RIGHT 60% of the frame. Reserve the LEFT 40% as a very calm softly lit ivory/off-white wall with minimal detail, naturally blending into the room, with no heads, chairs, devices or posters obstructing this copy space, even in its lower portion. The first occupied desk begins around x=40–45%. Keep the instructor visible in the upper right half. Reduce wasted ceiling and avoid wide-angle distortion.
+Clean balanced natural daylight and softly lit ceiling fixtures, warm neutral classroom atmosphere. Subtle forest-green #1B5143 and muted teal accents in clothing and accessories, light desks, ivory walls, restrained dark-gray chairs. Photographic realism and natural textures, not cartoon, doll, paper craft, 3D sculpture or illustration. Make it credible and professional without exaggeration.
+A few notebooks and tumblers, tidy natural desks, simplified cables. Laptop inside displays face their users; any camera-facing outside lids are opaque blank material. Show correct keyboards, hinges and screens, no impossible reversed laptop. Screens and projection show abstract graphics only. No readable text, numbers, logos, brand names, institution signs, dates, certificates or watermarks. New synthetic classroom scene, not documentary proof of actual enrollment or affiliation. Single high-quality finished landscape image, no captions.

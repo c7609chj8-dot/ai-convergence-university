@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import classroomHero from "@/public/images/university/classroom-learning-hero-v2.png";
 import websiteImage from "@/public/images/university/website-final-tile-v3.png";
+import dataImage from "@/public/images/university/personal-data-insights-v3.png";
+import toolsImage from "@/public/images/university/everyday-digital-tools-v3.png";
 import { Arrow } from "@/components/icons";
 import { Eyebrow, ProgramCard, RecruitmentBanner } from "@/components/ui";
 import { ProjectPreview } from "@/components/project-preview";
@@ -10,47 +12,111 @@ import { faqs, projects } from "@/content/site";
 export default function HomePage() {
   return (
     <>
-      <section className="image-hero" aria-labelledby="hero-title">
-        <figure className="image-hero-art">
-          <Image
-            src={classroomHero}
-            alt="성인학습자들이 노트북 실습에 참여하는 강의실을 표현한 AI 생성 이미지"
-            fill
-            preload
-            placeholder="blur"
-            sizes="100vw"
-          />
-        </figure>
-        <div className="container image-hero-inner">
-          <div className="image-hero-copy">
-            <Eyebrow>새로운 배움, 새로운 가능성</Eyebrow>
-            <h1 id="hero-title">
-              AI를 배우고,
-              <br />
-              <span>나의 가능성</span>을<br />
-              만들다.
-            </h1>
-            <p>
-              처음이어도 괜찮습니다.
-              <br />
-              일상에 필요한 작은 도구부터 나만의 프로그램까지,
-              <br className="desktop-only" /> 직접 만들며 배우는 24주의 여정.
-            </p>
-            <div className="image-hero-actions">
-              <Link href="/programs" className="button">
-                교육과정 살펴보기 <Arrow />
-              </Link>
-              <Link href="/roadmap" className="text-link">
-                24주 여정 보기 <Arrow diagonal />
-              </Link>
+      <section className="studio-hero image-hero" aria-labelledby="hero-title">
+        <div className="studio-field" aria-hidden="true">
+          <svg
+            className="studio-orbits"
+            viewBox="0 0 1440 820"
+            fill="none"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <ellipse
+              cx="725"
+              cy="400"
+              rx="540"
+              ry="206"
+              transform="rotate(-17 725 400)"
+            />
+            <ellipse
+              cx="830"
+              cy="445"
+              rx="375"
+              ry="286"
+              transform="rotate(24 830 445)"
+            />
+            <path d="M120 600C450 340 930 740 1300 180M270 80C820 350 400 700 1260 680" />
+          </svg>
+          <figure className="studio-tile studio-tile-classroom image-hero-art">
+            <Image
+              src={classroomHero}
+              alt=""
+              fill
+              preload
+              placeholder="blur"
+              sizes="(max-width: 600px) 72vw, (max-width: 900px) 50vw, 38vw"
+            />
+            <span>LEARN TOGETHER</span>
+          </figure>
+          <figure className="studio-tile studio-tile-website">
+            <Image
+              src={websiteImage}
+              alt=""
+              fill
+              placeholder="blur"
+              sizes="(max-width: 600px) 28vw, 15vw"
+            />
+            <span>BUILD YOUR IDEAS</span>
+          </figure>
+          <figure className="studio-tile studio-tile-data">
+            <Image
+              src={dataImage}
+              alt=""
+              fill
+              placeholder="blur"
+              sizes="(max-width: 600px) 24vw, 13vw"
+            />
+          </figure>
+          <figure className="studio-tile studio-tile-tools">
+            <Image
+              src={toolsImage}
+              alt=""
+              fill
+              placeholder="blur"
+              sizes="(max-width: 600px) 25vw, 12vw"
+            />
+          </figure>
+          <span className="studio-cross cross-a">+</span>
+          <span className="studio-cross cross-b">+</span>
+        </div>
+        <div className="container studio-hero-inner">
+          <div className="studio-hero-meta">
+            <span>AI CONVERGENCE UNIVERSITY</span>
+            <span>24 WEEKS / YOUR NEXT CHAPTER</span>
+          </div>
+          <h1 id="hero-title">
+            <span>AI를 배우고,</span>
+            <span>
+              가능성을 만듭니다<span className="studio-period">.</span>
+            </span>
+          </h1>
+          <div className="studio-hero-bottom">
+            <div className="studio-hero-intro">
+              <p>
+                낯선 기술을, 나의 일상으로.
+                <br />
+                기초 12주부터 심화 12주까지,
+                <br />
+                직접 만들며 배우는 성인 AI 교육.
+              </p>
+              <div className="studio-hero-actions">
+                <Link href="/programs" className="studio-main-link">
+                  교육과정 살펴보기 <Arrow diagonal />
+                </Link>
+                <Link href="/roadmap" className="studio-secondary-link">
+                  24주 로드맵 <Arrow />
+                </Link>
+              </div>
             </div>
-            <div className="image-hero-support">
-              <span className="small-dot" />
-              성인·비전공자를 위한 실습 중심 교육
+            <div className="studio-scroll">
+              <span className="hero-image-label">
+                AI 생성 교육 콘셉트 이미지
+              </span>
+              <a href="#learning-programs">
+                아래로 둘러보기 <span>↓</span>
+              </a>
             </div>
           </div>
         </div>
-        <span className="hero-image-label">AI 생성 교육 콘셉트 이미지</span>
       </section>
       <section className="facts-strip" aria-label="교육과정 요약">
         <div className="container facts-grid">
@@ -80,14 +146,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="section container">
+      <section
+        className="section container studio-programs"
+        id="learning-programs"
+      >
         <div className="section-heading">
           <div>
             <Eyebrow>LEARNING PROGRAMS</Eyebrow>
             <h2>
-              출발점은 달라도,
+              처음의 호기심을,
               <br />
-              가능성은 누구에게나.
+              매일 쓰는 능력으로.
             </h2>
           </div>
           <p>
@@ -95,6 +164,10 @@ export default function HomePage() {
             <br className="desktop-only" /> 지금 나에게 맞는 과정에서
             시작하세요.
           </p>
+        </div>
+        <div className="studio-section-index">
+          <span>(교육과정)</span>
+          <span>01 — 02</span>
         </div>
         <div className="program-grid">
           <ProgramCard track="basic" />

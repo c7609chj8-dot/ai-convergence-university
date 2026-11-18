@@ -162,8 +162,13 @@ try {
   await page.locator(".image-hero-art img").evaluate((image) => image.decode());
   assert.equal(await page.locator(".hero-image-label").isVisible(), true);
   assert.equal(await page.locator(".program-card-visual img").count(), 2);
-  results.interactions.push("메인 히어로 이미지 로딩·생성 이미지 표시·과정 이미지 연결");
-  await page.screenshot({ path: "artifacts/hero-desktop.png", fullPage: false });
+  results.interactions.push(
+    "메인 히어로 이미지 로딩·생성 이미지 표시·과정 이미지 연결",
+  );
+  await page.screenshot({
+    path: "artifacts/hero-desktop.png",
+    fullPage: false,
+  });
   await page.screenshot({ path: "artifacts/home-desktop.png", fullPage: true });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({ path: "artifacts/hero-mobile.png", fullPage: false });

@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/ui";
 import { siteDescription } from "@/content/site";
 import "./globals.css";
+import "./editorial.css";
 
 export const metadata: Metadata = {
   title: {

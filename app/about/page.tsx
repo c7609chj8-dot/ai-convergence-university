@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { LineIcon } from "@/components/icons";
 import { Eyebrow, PageIntro, RecruitmentBanner } from "@/components/ui";
+import { EducationGallery } from "@/components/education-gallery";
 
 export const metadata: Metadata = { title: "대학 소개" };
 
@@ -73,6 +74,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <EducationGallery />
       <RecruitmentBanner />
     </>
   );

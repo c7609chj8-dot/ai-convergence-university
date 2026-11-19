@@ -162,8 +162,27 @@ try {
   await page.locator(".image-hero-art img").evaluate((image) => image.decode());
   assert.equal(await page.locator(".hero-image-label").isVisible(), true);
   assert.equal(await page.locator(".program-card-visual img").count(), 2);
+  for (const route of ["/", "/about"]) {
+    await page.goto(baseURL + route);
+    assert.equal(await page.locator(".education-photo-grid img").count(), 4);
+    await page
+      .locator(".education-photo-grid img")
+      .evaluateAll(async (images) => {
+        await Promise.all(
+          images.map((image) => {
+            image.loading = "eager";
+            return image.decode();
+          }),
+        );
+      });
+    assert.match(
+      await page.locator(".education-gallery-note").innerText(),
+      /AI 과정의 실제 수업 사진을 의미하지 않습니다/,
+    );
+  }
+  await page.goto(baseURL);
   results.interactions.push(
-    "메인 히어로 이미지 로딩·생성 이미지 표시·과정 이미지 연결",
+    "메인 히어로·과정 이미지 연결, 홈·대학 소개 교육 현장 사진 4장 로딩·설명 확인",
   );
   await page.screenshot({
     path: "artifacts/hero-desktop.png",

@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import classroomHero from "@/public/images/university/classroom-learning-hero-v2.png";
 import websiteImage from "@/public/images/university/website-final-tile-v3.png";
-import dataImage from "@/public/images/university/personal-data-insights-v3.png";
-import toolsImage from "@/public/images/university/everyday-digital-tools-v3.png";
+import { educationPhotos } from "@/content/education-photos";
+import { EducationGallery } from "@/components/education-gallery";
 import { Arrow } from "@/components/icons";
 import { Eyebrow, ProgramCard, RecruitmentBanner } from "@/components/ui";
 import { ProjectPreview } from "@/components/project-preview";
@@ -38,7 +37,7 @@ export default function HomePage() {
           </svg>
           <figure className="studio-tile studio-tile-classroom image-hero-art">
             <Image
-              src={classroomHero}
+              src={educationPhotos[0].image}
               alt=""
               fill
               preload
@@ -49,17 +48,17 @@ export default function HomePage() {
           </figure>
           <figure className="studio-tile studio-tile-website">
             <Image
-              src={websiteImage}
+              src={educationPhotos[2].image}
               alt=""
               fill
               placeholder="blur"
               sizes="(max-width: 600px) 28vw, 15vw"
             />
-            <span>BUILD YOUR IDEAS</span>
+            <span>LEARNING SCENES</span>
           </figure>
           <figure className="studio-tile studio-tile-data">
             <Image
-              src={dataImage}
+              src={educationPhotos[1].image}
               alt=""
               fill
               placeholder="blur"
@@ -68,7 +67,7 @@ export default function HomePage() {
           </figure>
           <figure className="studio-tile studio-tile-tools">
             <Image
-              src={toolsImage}
+              src={educationPhotos[3].image}
               alt=""
               fill
               placeholder="blur"
@@ -109,7 +108,7 @@ export default function HomePage() {
             </div>
             <div className="studio-scroll">
               <span className="hero-image-label">
-                AI 생성 교육 콘셉트 이미지
+                제공된 교육 현장 사진 · 다양한 수업 장면
               </span>
               <a href="#learning-programs">
                 아래로 둘러보기 <span>↓</span>
@@ -356,6 +355,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <EducationGallery />
       <RecruitmentBanner />
     </>
   );
